@@ -97,11 +97,3 @@ public class BalancedBracketsTest {
     }
 
 }
-
-
-
-/*
- 9. the function requires a parameter
-10. the function throws an error if the parameter isn't a string
-
-*/
