@@ -21,15 +21,37 @@ public class BalancedBrackets {
      * @param str - to be validated
      * @return true if balanced, false otherwise
      */
+//    public static boolean hasBalancedBrackets(String str) {
+//        if(str == null){
+//            throw new IllegalArgumentException("Can't exceed tank size");
+//        }
+//        int brackets = 0;
+//        for (char ch : str.toCharArray()) {
+//            if (ch == '[') {
+//                brackets++;
+//            } else if (ch == ']') {
+//                brackets--;
+//            }
+//        }
+//        return brackets == 0;
+//    }
+
     public static boolean hasBalancedBrackets(String str) {
-        int brackets = 0;
+        int openBracketCount = 0;
+        int closedBracketCount = 0;
+
         for (char ch : str.toCharArray()) {
             if (ch == '[') {
-                brackets++;
+                openBracketCount++;
             } else if (ch == ']') {
-                brackets--;
+                if(openBracketCount == closedBracketCount + 1){
+                    closedBracketCount++;
+                }
+                else{
+                    return false;
+                }
             }
         }
-        return brackets == 0;
+        return openBracketCount == closedBracketCount;
     }
 }
